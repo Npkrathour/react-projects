@@ -1,15 +1,15 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Modal01 from "./pages/Modal01";
 import NoPage from "./pages/NoPage";
 import Home from "./pages/Home";
+import About from "./pages/About";
 
 const App = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/modal" element={<Modal01 />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/" element={<About />} />
         <Route path="*" element={<NoPage />} />
       </Routes>
     </BrowserRouter>
