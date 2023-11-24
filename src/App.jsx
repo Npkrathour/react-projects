@@ -1,20 +1,20 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import NoPage from "./pages/NoPage";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Layout from "./pages/Layout";
 import Home from "./pages/Home";
 import About from "./pages/About";
+import NoPage from "./pages/NoPage";
 
-
-const App = () => {
+export default function App() {
   return (
-    <Router>
-      <Switch>
-        <Route path="/" exact component={Home} />
-        <Route path="/about" component={About} />
-        <Route path="*" component={NoPage} />
-      </Switch>
-    </Router>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="about" element={<About />} />
+          <Route path="*" element={<NoPage />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
-};
-
-export default App;
+}
