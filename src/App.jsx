@@ -1,18 +1,19 @@
-import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import NoPage from "./pages/NoPage";
 import Home from "./pages/Home";
 import About from "./pages/About";
 
+
 const App = () => {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/home" element={<Home />} />
-        <Route path="/" element={<About />} />
-        <Route path="*" element={<NoPage />} />
-      </Routes>
-    </BrowserRouter>
+    <Router>
+      <Switch>
+        <Route path="/" exact component={Home} />
+        <Route path="/about" component={About} />
+        <Route path="*" component={NoPage} />
+      </Switch>
+    </Router>
   );
 };
 
