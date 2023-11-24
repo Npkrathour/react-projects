@@ -10,7 +10,7 @@ const App = () => {
     <BrowserRouter>
       <Routes>
           <Route index element={<Home />} />
-          <Route path="/modal01" element={<Modal01 />} />
+          <Route path="/modal" element={<Modal01 />} />
           <Route path="*" element={<NoPage />} />
       </Routes>
     </BrowserRouter>
