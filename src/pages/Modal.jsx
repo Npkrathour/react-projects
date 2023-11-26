@@ -30,7 +30,12 @@ const Modal = () => {
             iste autem nobis sed consequuntur.
           </p>
           <div className="text-center mt-5">
-            <button className="bg-green-500 px-12 py-3 rounded-lg font-bold text-lg text-white">Close</button>
+            <button
+              onClick={() => setShow(false)}
+              className="bg-green-500 px-12 py-3 rounded-lg font-bold text-lg text-white"
+            >
+              Close
+            </button>
           </div>
         </div>
       </div>
