@@ -1,17 +1,23 @@
 import React from "react";
 import TickImg from "../assets/tick.png";
 import { UilTimes } from "@iconscout/react-unicons";
+import { useState } from "react";
 
 const Modal = () => {
+  const [show, setShow] = useState(false);
+
   return (
     <div>
       <div className="flex justify-center items-center h-screen">
-        <button className="bg-red-500 rounded-lg text-lg font-bold px-5 py-3 text-white">View Modal</button>
+        <button onClick={() => setShow(!show)} className="bg-red-500 rounded-lg text-lg font-bold px-5 py-3 text-white">
+          View Modal
+        </button>
       </div>
 
-      <div className="bg-[rgba(0,0,0,0.5)] fixed top-0 bottom-0 left-0 right-0">
+      <div className={`${show ? "block" : "hidden"} bg-[rgba(0,0,0,0.5)] fixed top-0 bottom-0 left-0 right-0`}>
         <div className="absolute top-1/2 left-1/2 bg-white p-10 -translate-y-1/2 -translate-x-1/2 w-full max-w-[600px] rounded-2xl">
           <UilTimes
+            onClick={() => setShow(false)}
             size={45}
             className="absolute right-5 top-5 cursor-pointer hover:bg-slate-200 rounded-lg p-1 transition ease-in delay-150"
           />
