@@ -9,7 +9,7 @@ const Modal = () => {
   return (
     <div>
       <div className="flex justify-center items-center h-screen">
-        <button onClick={() => setShow(!show)} className="bg-red-500 rounded-lg text-lg font-bold px-5 py-3 text-white">
+        <button onClick={() => setShow(true)} className="bg-red-500 rounded-lg text-lg font-bold px-5 py-3 text-white">
           View Modal
         </button>
       </div>
